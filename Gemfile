@@ -7,6 +7,8 @@ gem "inherited_resources", ">=1.1.2"
 gem "devise", ">=1.1.2"
 gem "compass", ">= 0.11.1"
 gem "barista", ">= 0.5.0"
+gem "json"
+gem 'jquery-rails'
 
 group :development do
   gem "rails3-generators", :git => "git://github.com/indirect/rails3-generators.git"
