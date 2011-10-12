@@ -8,6 +8,19 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Ticketer
   class Application < Rails::Application
+    config.generators do |g|
+      g.template_engine :haml
+      g.test_framework  :rspec, :fixture => true, :views => false
+      g.integration_tool :rspec, :fixture => true, :views => true
+      g.fixture_replacement :factory_girl, :dir => "spec/support/factories"
+    end
+
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
+
+    # Custom directories with classes and modules you want to be autoloadable.
+    config.autoload_paths += %W(#{config.root}/lib)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -40,3 +53,4 @@ module Ticketer
     config.filter_parameters += [:password]
   end
 end
+
