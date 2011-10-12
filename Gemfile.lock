@@ -146,17 +146,19 @@ GEM
       remarkable_activemodel (~> 4.0.0.alpha4)
       rspec (>= 2.0.0.alpha11)
     responders (0.6.4)
-    rspec (2.7.0.rc1)
-      rspec-core (= 2.7.0.rc1)
-      rspec-expectations (= 2.7.0.rc1)
-      rspec-mocks (= 2.7.0.rc1)
-    rspec-core (2.7.0.rc1)
-    rspec-expectations (2.7.0.rc1)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
-    rspec-mocks (2.7.0.rc1)
-    rspec-rails (2.2.0)
-      rails (~> 3.0.0)
-      rspec (~> 2.2)
+    rspec-mocks (2.6.0)
+    rspec-rails (2.6.1)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.6.0)
     rubyzip (0.9.4)
     sass (3.1.10)
     selenium-webdriver (2.8.0)
@@ -182,11 +184,11 @@ DEPENDENCIES
   barista (>= 0.5.0)
   capybara-envjs
   compass (>= 0.11.1)
-  devise (>= 1.1.2)
+  devise
   factory_girl_rails (~> 1.1)
   faker
-  haml-rails (>= 0.2)
-  inherited_resources (>= 1.1.2)
+  haml-rails
+  inherited_resources
   jquery-rails
   json
   mysql2 (~> 0.2.6)
