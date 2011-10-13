@@ -30,7 +30,7 @@ set :application_port, 80
 set :unicorn_workers, 2
 
 set :database,   :postgresql
-set :monitorer,  nil
+set :monitorer,  :god
 
 set :sockets_path, "#{shared_path}/pids"
 set :shared_dirs, %w(config assets backup bundle pids tmp log)
