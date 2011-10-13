@@ -13,8 +13,8 @@ set :branch,          "origin/master"
 set :deploy_to,       "/var/www/apps/#{application}"
 set :rvm_ruby_string, "ree"
 
-set :stages,        %w(production staging)
-set :default_stage, "staging"
+set :stages,        %w(production)
+set :default_stage, "production"
 
 
 # ==============================================================================
@@ -31,7 +31,7 @@ set :unicorn_workers, 2
 
 set :database,   :postgresql
 set :monitorer,  :god
-
+set :rails_env,  'production'
 set :sockets_path, "#{shared_path}/pids"
 set :shared_dirs, %w(config assets backup bundle pids tmp log)
 set :nginx_path_prefix, "/usr/local/nginx"
