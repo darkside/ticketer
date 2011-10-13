@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
-gem 'mysql2', '~> 0.2.6'
 gem "haml-rails"
 gem "inherited_resources"
 gem "devise"
@@ -18,6 +17,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'mysql2', '~> 0.2.6'
   gem "rspec", ">=2.0.1"
   gem "factory_girl_rails", "~> 1.1"
   gem "rspec-rails", ">=2.0.1"
@@ -26,5 +26,10 @@ group :development, :test do
   gem "remarkable_activerecord", ">=4.0.0.alpha4"
   gem "capybara-envjs"
   gem "faker"
+end
+
+group :production do
+  gem "unicorn"
+  gem "pg" # because i already have PG set up on darknode
 end
 
