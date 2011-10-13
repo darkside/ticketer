@@ -10,3 +10,11 @@ en:
       in_progress: "In Progress"
       closed: "Closed"
 
+
+  tickets:
+    index:
+      title: "Tickets Index"
+      amount: "You have %{amount} tickets"
+    new:
+      title: "Create a New Ticket"
+

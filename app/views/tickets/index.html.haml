@@ -1,3 +1,6 @@
+%h1.title=t('.title')
+%h2.alt=t('.amount', :amount => collection.size)
+
 %table.tickets
   %thead
     %tr
@@ -10,5 +13,5 @@
   %tbody
     = render collection
 
-= link_to 'Create a new ticket', new_resource_path
+= link_to t('tickets.new.title'), new_resource_path
 
