@@ -10,5 +10,7 @@ class Ticket < ActiveRecord::Base
   # Associations
   belongs_to :user
 
+  # Scopes
+  default_scope order("updated_at DESC")
 end
 

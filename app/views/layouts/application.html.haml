@@ -7,9 +7,13 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
     = javascript_include_tag :defaults
+    = csrf_meta_tag
   %body.bp.two-col
     #container
       #header
+        - flash.each do |type, value|
+          .flash{ :class => type.to_s }
+            = value
         %h1= link_to t("site_name"), root_url
         %hr.space
         = render 'shared/links'

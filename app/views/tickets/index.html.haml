@@ -1,0 +1,14 @@
+%table.tickets
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Status
+      %th Created
+      %th Updated
+      %th{ :colspan => 2 }
+  %tbody
+    = render collection
+
+= link_to 'Create a new ticket', new_resource_path
+

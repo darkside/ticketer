@@ -4,4 +4,9 @@
 en:
   hello: "Hello world"
   site_name: "Ticketer"
+  ticket:
+    status:
+      open: "Open"
+      in_progress: "In Progress"
+      closed: "Closed"
 

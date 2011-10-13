@@ -1,0 +1,9 @@
+%tr.ticket{ :id => dom_id(ticket) }
+  %td= link_to ticket.name, ticket
+  %td= truncate ticket.description
+  %td= t(ticket.status, :scope => [:ticket, :status])
+  %td= time_ago_in_words(ticket.created_at) + " ago"
+  %td= time_ago_in_words(ticket.updated_at) + " ago"
+  %td= link_to 'Edit', edit_resource_path(ticket)
+  %td= link_to 'Destroy', ticket, :method => :delete
+
