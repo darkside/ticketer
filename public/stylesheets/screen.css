@@ -57,7 +57,17 @@ a img {
   border: none;
 }
 
-/* line 9, ../../app/stylesheets/partials/_page.sass */
+/* line 8, ../../app/stylesheets/partials/_page.sass */
+html, body {
+  margin: 1em 0;
+}
+
+/* line 11, ../../app/stylesheets/partials/_page.sass */
+#header {
+  margin: 1em 0;
+}
+
+/* line 13, ../../app/stylesheets/partials/_page.sass */
 body.bp {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;

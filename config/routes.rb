@@ -1,8 +1,6 @@
 Ticketer::Application.routes.draw do
   devise_for :users
-
-  resources :users
-
-  root :to => "home#index"
+  resources :tickets
+  root :to => "tickets#index"
 end
 
