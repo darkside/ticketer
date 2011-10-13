@@ -17,4 +17,8 @@ en:
       amount: "You have %{amount} tickets"
     new:
       title: "Create a New Ticket"
+    edit:
+      title: "Edit this Ticket's Details"
+    show:
+      title: "Ticket Details"
 

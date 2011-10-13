@@ -15,10 +15,10 @@
           .flash{ :class => type.to_s }
             = value
         %h1= link_to t("site_name"), root_url
-        %hr.space
-        = render 'shared/links'
       #sidebar
+        = render 'shared/links'
       #content
         = yield
       #footer
+        // footer here
 

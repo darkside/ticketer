@@ -5,5 +5,9 @@
     = f.input :description, :as => :text
     = f.input :user,   :as => :select
     = f.input :status, :as => :select, :collection => Ticket::STATUSES, :member_label => Proc.new { |s| t(s, :scope => [:ticket, :status])  }
-  = f.buttons
+  = f.buttons do
+    = f.commit_button
+    %p
+      Or,
+      = link_to 'Go back', tickets_path
 
