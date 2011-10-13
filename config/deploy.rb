@@ -36,6 +36,12 @@ set :sockets_path, "#{shared_path}/pids"
 set :shared_dirs, %w(config assets backup bundle pids tmp log)
 set :nginx_path_prefix, "/usr/local/nginx"
 
+# God overrides
+set :god_conf_local,        "doc/god/god.conf"     # god shared config and helpers
+set :bin_god,               "bootup_god"           # god rvm wrapper
+set :god_local_config,      "doc/app.god.erb"      # god watches
+set :god_init_local,        "doc/god/god.init.erb" # god init script
+
 # ==============================================================================
 # Symlinks
 # ==============================================================================
@@ -50,8 +56,10 @@ set :weird_symlinks, { 'bundle' => 'vendor/bundle',
 # Finally, require the capistrano recipes.
 require 'capistrano_recipes'
 
-before "deploy:restart" do
-  run  "rm -f #{current_path}/public/stylesheets/all.css"
-  sudo "chown #{user}:#{group} #{deploy_to} -R"
+# Update ownership if needed, run compass and barista.
+after "deploy:update", :roles => :app do
+  run "#{sudo} chown #{user}:#{group} #{current_path} -R"
+  run "cd #{current_path} && bundle exec rake barista:brew RAILS_ENV=#{environment}"
+  run "cd #{current_path} && bundle exec compass compile --output-style compressed --force"
 end
 

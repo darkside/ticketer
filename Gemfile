@@ -4,7 +4,10 @@ gem 'rails', '3.0.9'
 gem "haml-rails"
 gem "inherited_resources"
 gem "devise"
-gem "compass", ">= 0.11.1"
+
+# Compass patched to play nice with God
+gem "compass", :git => "git://github.com/darkside/compass.git"
+
 gem "barista", ">= 0.5.0"
 gem "json"
 gem 'jquery-rails'
